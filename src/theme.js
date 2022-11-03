@@ -25,7 +25,7 @@ export const shades = {
     900: "#040808",
   },
 
-  nutural: {
+  neutral: {
     100: "#faf8f7",
     200: "#f5f2f0",
     300: "#f1ebe8",
