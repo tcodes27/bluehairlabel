@@ -72,6 +72,7 @@ const MainCarousel = () => {
             borderRadius="1px"
             textAlign="left"
             backgroundColor="rgb(0, 0, 0, 0.4)"
+            y
             position="absolute"
             top="46%"
             left={isNonMobile ? "10%" : "0"}

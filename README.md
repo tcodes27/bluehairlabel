@@ -1,5 +1,6 @@
 # Blue Hair Label (In Process)
 
+![Dashboard](./public/blueHiarLabel.png)
 <br>
 
 ## Highlights

@@ -18,6 +18,7 @@ const FlexBox = styled(Box)`
   justify-content: space-between;
   align-items: center;
 `;
+
 const CartMenu = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

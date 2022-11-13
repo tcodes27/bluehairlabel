@@ -1,3 +1,4 @@
+import React from "react";
 import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import { shades } from "../../theme";
@@ -29,10 +30,7 @@ function Footer() {
           <div>
             Sed sit perferendis commodi quia in cumque. Voluptatibus et dolore
             necessitatibus. Quae reiciendis magni nesciunt quis asperiores eos
-            consequatur facere. Beatae saepe eos. Ducimus ea sapiente. Debitis
-            facilis tempore officiis eligendi in nostrum ut. Eum similique neque
-            optio quia molestiae nam. Eius eligendi impedit quia. Repellat aut
-            temporibus velit natus ut architecto alias.
+            consequatur facere.
           </div>
         </Box>
 

@@ -13,7 +13,6 @@ const ShoppingList = () => {
   const [value, setValue] = useState("all");
   const items = useSelector((state) => state.cart.items);
   const breakPoint = useMediaQuery("(min-width:600px)");
-  console.log("items,items");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,22 +23,24 @@ const ShoppingList = () => {
       "http://localhost:1337/api/items?populate=image",
       { method: "GET" }
     );
-    const itemsJson = await items.json();
-    dispatch(setItems(itemsJson.data));
+    try {
+      const itemsJson = items.json();
+      dispatch(setItems(itemsJson.data));
+    } catch (error) {}
   }
 
   useEffect(() => {
     getItems();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const wigsItems = items.filter(
-    (item) => item.attributes.category === "wigsItems"
+  const topRatedItems = items.filter(
+    (item) => item.attributes.category === "topRated"
   );
-  const weftsItems = items.filter(
-    (item) => item.attributes.category === "weftsItems"
+  const newArrivalsItems = items.filter(
+    (item) => item.attributes.category === "newArrivals"
   );
-  const tapeInsItems = items.filter(
-    (item) => item.attributes.category === "tapeInsItems"
+  const bestSellersItems = items.filter(
+    (item) => item.attributes.category === "bestSellers"
   );
 
   return (
@@ -62,9 +63,9 @@ const ShoppingList = () => {
         }}
       >
         <Tab label="ALL" value="all" />
-        <Tab label="WEFTS" value="wefts" />
-        <Tab label="TAPE - INS" value="tapeIns" />
-        <Tab label="WIGS" value="wigs" />
+        <Tab label="NEW ARRIVALS" value="newArrivals" />
+        <Tab label="BEST SELLERS" value="bestSellers" />
+        <Tab label="TOP RATED" value="topRated" />
       </Tabs>
       <Box
         margin="0 auto"
@@ -78,16 +79,16 @@ const ShoppingList = () => {
           items.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "wefts" &&
-          weftsItems.map((item) => (
+        {value === "newArrivals" &&
+          newArrivalsItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "tapeIns" &&
-          tapeInsItems.map((item) => (
+        {value === "bestSellers" &&
+          bestSellersItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
-        {value === "wigs" &&
-          wigsItems.map((item) => (
+        {value === "topRated" &&
+          topRatedItems.map((item) => (
             <Item item={item} key={`${item.name}-${item.id}`} />
           ))}
       </Box>

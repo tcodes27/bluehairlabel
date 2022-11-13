@@ -1,7 +1,16 @@
-import React from "react";
+import { Box } from "@mui/material";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
-function Confirmation() {
-  return <div>Confirmation</div>;
-}
-
+const Confirmation = () => {
+  return (
+    <Box m="90px auto" width="80%" height="50vh">
+      <Alert severity="success">
+        <AlertTitle>Success</AlertTitle>
+        You have successfully made an Order —{" "}
+        <strong>Congrats on Purchasing your Luxury Hair Extensions! </strong>
+      </Alert>
+    </Box>
+  );
+};
 export default Confirmation;
